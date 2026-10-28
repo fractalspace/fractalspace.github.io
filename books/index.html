@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover two books by Ayham: We Plant Dreams in Torn Earth and Threads Through Rubble.">
+  <meta name="theme-color" content="#201a16">
+  <title>Books by Ayham — Stories of memory and hope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #29231f;
+      --muted: #71665c;
+      --paper: #f5f0e7;
+      --paper-light: #fbf8f2;
+      --paper-dark: #e9dfd0;
+      --soil: #201a16;
+      --soil-soft: #332720;
+      --clay: #b77543;
+      --sage: #788b62;
+      --gold: #d7b979;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.7 var(--sans);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--sage); outline-offset: 4px; }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 680px;
+      color: var(--paper-light);
+      background:
+        radial-gradient(ellipse at 75% 30%, rgba(108, 91, 62, 0.26), transparent 38%),
+        linear-gradient(135deg, #201a16 0%, #31251d 58%, #1c1915 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -120px;
+      bottom: -340px;
+      width: 720px;
+      height: 480px;
+      border: 1px solid rgba(215, 185, 121, 0.14);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 25px;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-group, .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-group { gap: 25px; }
+    .nav-links { gap: 24px; }
+
+    .nav-links a {
+      color: rgba(251, 248, 242, 0.78);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .lang-toggle {
+      display: inline-flex;
+      gap: 2px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+    }
+
+    .lang-toggle button {
+      min-width: 38px;
+      padding: 5px 8px;
+      color: rgba(255,255,255,0.68);
+      background: transparent;
+      border: 0;
+      border-radius: 999px;
+      font: 600 0.7rem var(--sans);
+      cursor: pointer;
+    }
+
+    .lang-toggle button.active {
+      color: var(--soil);
+      background: var(--gold);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      align-items: center;
+      gap: 42px;
+      min-height: 565px;
+      padding-block: 38px 96px;
+    }
+
+    .eyebrow, .section-kicker {
+      display: block;
+      margin-bottom: 17px;
+      color: var(--clay);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow { color: var(--gold); }
+
+    .hero h1 {
+      max-width: 620px;
+      margin-bottom: 22px;
+      font-size: clamp(3.2rem, 6vw, 5.7rem);
+    }
+
+    .hero-copy {
+      max-width: 455px;
+      margin-bottom: 29px;
+      color: rgba(251, 248, 242, 0.72);
+      font-size: 1.08rem;
+    }
+
+    .hero-books {
+      position: relative;
+      display: flex;
+      width: min(100%, 620px);
+      align-items: center;
+      justify-self: end;
+      padding: 38px 24px 48px;
+    }
+
+    .hero-books img {
+      width: 51%;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      filter: drop-shadow(0 28px 32px rgba(0,0,0,0.26));
+    }
+
+    .hero-books img:first-child {
+      z-index: 1;
+      transform: rotate(-6deg) translateX(16px);
+    }
+
+    .hero-books img:last-child {
+      transform: rotate(5deg) translateX(-16px);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--soil); background: var(--gold); }
+    .button-primary:hover { background: #e2c98e; }
+    .button-quiet {
+      color: var(--paper-light);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .button-quiet:hover { border-color: var(--gold); }
+
+    .books-section {
+      padding: 100px 0 106px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      max-width: 590px;
+      margin-bottom: 0;
+      color: var(--soil-soft);
+      font-size: clamp(2.4rem, 4vw, 3.65rem);
+    }
+
+    .section-heading p {
+      max-width: 365px;
+      margin-bottom: 4px;
+      color: var(--muted);
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 24px;
+    }
+
+    .book-card {
+      display: grid;
+      grid-template-columns: minmax(140px, 0.62fr) minmax(0, 1fr);
+      gap: 25px;
+      min-height: 432px;
+      padding: 25px;
+      background: var(--paper-light);
+      border: 1px solid rgba(47, 37, 29, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 12px 35px rgba(49, 39, 31, 0.055);
+    }
+
+    .book-cover {
+      align-self: start;
+      overflow: hidden;
+      border-radius: 3px;
+      box-shadow: 8px 12px 23px rgba(28, 22, 17, 0.2);
+    }
+
+    .book-cover img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+    }
+
+    .book-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .book-number {
+      margin: 0 0 13px;
+      color: var(--clay);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .book-card h3 {
+      margin-bottom: 10px;
+      color: var(--soil-soft);
+      font-size: clamp(1.55rem, 2.3vw, 2.15rem);
+      text-wrap: balance;
+    }
+
+    .book-subtitle {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .book-author {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .excerpt {
+      position: relative;
+      margin: 0 0 20px;
+      padding-inline-start: 14px;
+      color: #4a3e34;
+      border-inline-start: 2px solid var(--sage);
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    .book-price {
+      margin: auto 0 13px;
+      color: var(--soil);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .book-price span {
+      margin-inline-start: 5px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    .book-card .button { min-height: 43px; padding: 9px 17px; }
+
+    .closing {
+      padding: 62px 0;
+      color: var(--paper-light);
+      background:
+        radial-gradient(ellipse at 82% 10%, rgba(120,139,98,0.2), transparent 36%),
+        var(--soil-soft);
+    }
+
+    .closing-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 34px;
+    }
+
+    .closing h2 {
+      margin-bottom: 8px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    .closing p {
+      margin-bottom: 0;
+      color: rgba(251,248,242,0.68);
+    }
+
+    footer {
+      padding: 23px 0;
+      color: rgba(251,248,242,0.62);
+      background: var(--soil);
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    [dir="rtl"] .section-heading,
+    [dir="rtl"] .closing-inner,
+    [dir="rtl"] .footer-inner {
+      direction: rtl;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr 0.9fr; gap: 20px; }
+      .book-card { grid-template-columns: minmax(120px, 0.55fr) minmax(0, 1fr); gap: 18px; padding: 20px; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 36px, 520px); }
+      .hero { min-height: 0; }
+      .site-header { padding-block: 18px; }
+      .nav-group { gap: 12px; }
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: 0.78rem; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+        padding-block: 54px 84px;
+      }
+      .hero h1 { max-width: 560px; font-size: clamp(3rem, 12vw, 4.5rem); }
+      .hero-copy { max-width: 500px; }
+      .hero-books { width: min(100%, 480px); justify-self: center; }
+      .hero-books img:first-child { transform: rotate(-5deg) translateX(10px); }
+      .hero-books img:last-child { transform: rotate(4deg) translateX(-10px); }
+      .books-section { padding: 70px 0 76px; }
+      .section-heading { display: block; margin-bottom: 27px; }
+      .section-heading h2 { margin-bottom: 14px; }
+      .book-grid { grid-template-columns: 1fr; gap: 18px; }
+      .book-card { grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr); min-height: 0; }
+      .closing-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 30px); }
+      .brand { font-size: 0.66rem; letter-spacing: 0.14em; }
+      .nav-links { gap: 9px; }
+      .nav-links a { font-size: 0.72rem; }
+      .nav-group { gap: 9px; }
+      .lang-toggle { gap: 0; }
+      .lang-toggle button { min-width: 32px; padding-inline: 5px; }
+      .book-card { grid-template-columns: minmax(95px, 0.35fr) minmax(0, 1fr); gap: 14px; padding: 15px; }
+      .book-card h3 { font-size: 1.45rem; }
+      .book-author { margin-bottom: 13px; }
+      .excerpt { font-size: 0.92rem; }
+      .footer-inner { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="wrap">
+      <nav class="site-header" aria-label="Main navigation">
+        <a class="brand" href="#top">Ayham's Books</a>
+        <div class="nav-group">
+          <div class="nav-links">
+            <a href="#books" data-i18n="navBooks">The books</a>
+            <a href="#contact" data-i18n="navContact">Contact</a>
+          </div>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" class="active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="eyebrow">Two books by Ayham</span>
+          <h1 data-i18n="heroTitle">Stories of memory, survival, and hope.</h1>
+          <p class="hero-copy" data-i18n="heroCopy">Meet two deeply personal books about the places we carry, the lives we rebuild, and the dreams that keep growing.</p>
+          <div class="hero-cta">
+            <a class="button button-primary" href="#books" data-i18n="heroButton">Explore the books</a>
+            <a class="button button-quiet" href="#contact" data-i18n="contactButton">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-books" role="group" aria-label="The two book covers">
+          <img src="images/plant-dreams.png" alt="Cover of We Plant Dreams in Torn Earth">
+          <img src="images/ThreadThroughRubble.png" alt="Cover of Threads Through Rubble">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="books-section" id="books">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker" data-i18n="sectionKicker">The collection</span>
+            <h2 data-i18n="sectionTitle">Two stories. A world of feeling.</h2>
+          </div>
+          <p data-i18n="sectionIntro">Read a few words from each book, then choose the story you would like to bring home.</p>
+        </div>
+
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="images/plant-dreams.png" alt="Cover of We Plant Dreams in Torn Earth">
+            </div>
+            <div class="book-details">
+              <p class="book-number" data-i18n="bookOneLabel">Book one</p>
+              <h3 lang="en" dir="ltr">We Plant Dreams in Torn Earth</h3>
+              <p class="book-subtitle" data-i18n="bookOneSubtitle">A Memoir of Gaza, Survival, and Hope</p>
+              <p class="book-author" data-i18n="bookOneAuthor">By Ayham Abu Afash</p>
+              <blockquote class="excerpt">“Before the war, my world smelled like wildflowers and honey.”</blockquote>
+              <blockquote class="excerpt">“Education became more than a goal. It became an act of hope. An act of resistance.”</blockquote>
+              <p class="book-price">CA$19.95 <span data-i18n="priceNote">per copy</span></p>
+              <a class="button button-primary" href="https://square.link/u/GL1VQ7Og" data-i18n="buyOne">Pay with Square</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="images/ThreadThroughRubble.png" alt="Cover of Threads Through Rubble">
+            </div>
+            <div class="book-details">
+              <p class="book-number" data-i18n="bookTwoLabel">Book two</p>
+              <h3 lang="en" dir="ltr">Threads Through Rubble</h3>
+              <p class="book-subtitle" data-i18n="bookTwoSubtitle">If Dandelions Can Grow Through Concrete</p>
+              <p class="book-author" data-i18n="bookTwoAuthor">By Denise Hartley &amp; Ayham Rouk</p>
+              <blockquote class="excerpt">“My hope is that when people read this book, they carry it with them—not only as a story of suffering, but as a reminder that life still reaches for light even under fire.”</blockquote>
+              <p class="book-price">CA$19.95 <span data-i18n="priceNote">per copy</span></p>
+              <a class="button button-primary" href="https://square.link/u/SZH9eqgf" data-i18n="buyTwo">Pay with Square</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="wrap closing-inner">
+        <div>
+          <span class="section-kicker" style="color:var(--gold)" data-i18n="closingKicker">A note to the reader</span>
+          <h2 data-i18n="closingTitle">Thank you for reading.</h2>
+          <p data-i18n="closingCopy">For book orders and questions, please get in touch.</p>
+        </div>
+        <a class="button button-primary" href="mailto:bellevillejusticepeace@gmail.com" data-i18n="emailButton">Email about the books</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <span data-i18n="copyright">Ayham's Books</span></span>
+      <a href="mailto:bellevillejusticepeace@gmail.com">bellevillejusticepeace@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        navBooks: "The books",
+        navContact: "Contact",
+        eyebrow: "Two books by Ayham",
+        heroTitle: "Stories of memory, survival, and hope.",
+        heroCopy: "Meet two deeply personal books about the places we carry, the lives we rebuild, and the dreams that keep growing.",
+        heroButton: "Explore the books",
+        contactButton: "Get in touch",
+        sectionKicker: "The collection",
+        sectionTitle: "Two stories. A world of feeling.",
+        sectionIntro: "Read a few words from each book, then choose the story you would like to bring home.",
+        bookOneLabel: "Book one",
+        bookOneSubtitle: "A Memoir of Gaza, Survival, and Hope",
+        bookOneAuthor: "By Ayham Abu Afash",
+        bookTwoLabel: "Book two",
+        bookTwoSubtitle: "If Dandelions Can Grow Through Concrete",
+        bookTwoAuthor: "By Denise Hartley & Ayham Rouk",
+        priceNote: "per copy",
+        buyOne: "Pay with Square",
+        buyTwo: "Pay with Square",
+        closingKicker: "A note to the reader",
+        closingTitle: "Thank you for reading.",
+        closingCopy: "For book orders and questions, please get in touch.",
+        emailButton: "Email about the books",
+        copyright: "Ayham's Books"
+      },
+      ar: {
+        navBooks: "الكتابان",
+        navContact: "تواصل",
+        eyebrow: "كتابان لأيهم",
+        heroTitle: "قصص عن الذاكرة والصمود والأمل.",
+        heroCopy: "كتابان شخصيان عن الأماكن التي نحملها في قلوبنا، والحياة التي نعيد بناءها، والأحلام التي تواصل النمو.",
+        heroButton: "اكتشف الكتابين",
+        contactButton: "تواصل معنا",
+        sectionKicker: "المجموعة",
+        sectionTitle: "قصتان، ومشاعر كثيرة.",
+        sectionIntro: "اقرأ مقتطفات من كل كتاب، ثم اختر القصة التي تود أن تصطحبها معك.",
+        bookOneLabel: "الكتاب الأول",
+        bookOneSubtitle: "مذكرات عن غزة والصمود والأمل",
+        bookOneAuthor: "بقلم أيهم أبو عفش",
+        bookTwoLabel: "الكتاب الثاني",
+        bookTwoSubtitle: "إذا كانت الهندباء تنمو عبر الخرسانة",
+        bookTwoAuthor: "بقلم Denise Hartley وأيهم روك",
+        priceNote: "للكتاب",
+        buyOne: "الدفع عبر Square",
+        buyTwo: "الدفع عبر Square",
+        closingKicker: "كلمة للقارئ",
+        closingTitle: "شكرًا لقراءتكم.",
+        closingCopy: "لطلب الكتب أو للاستفسار، يسعدنا تواصلكم معنا.",
+        emailButton: "راسلنا بشأن الكتب",
+        copyright: "كتب أيهم"
+      }
+    };
+
+    function applyLanguage(language) {
+      const copy = translations[language];
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        element.textContent = copy[key];
+      });
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        const active = button.dataset.lang === language;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+
+    applyLanguage("en");
+  </script>
+</body>
+</html>

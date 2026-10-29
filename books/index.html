@@ -260,36 +260,30 @@
       color: var(--muted);
     }
 
-    .maintenance-section {
-      padding: 50px 0 60px;
-      background: var(--paper-light);
-      border-top: 1px solid rgba(47, 37, 29, 0.08);
-      border-bottom: 1px solid rgba(47, 37, 29, 0.08);
-    }
-
-    .maintenance-section h3 {
-      margin-bottom: 16px;
-      font-size: 1.35rem;
+    .maintenance-notice {
+      padding: 14px 13px;
+      margin-bottom: 13px;
+      background: rgba(184, 117, 67, 0.08);
+      border-left: 3px solid var(--clay);
+      border-radius: 2px;
+      font-size: 0.8rem;
+      line-height: 1.5;
       color: var(--clay);
     }
 
-    .maintenance-section p {
-      margin-bottom: 12px;
-      color: var(--muted);
-      line-height: 1.7;
+    .maintenance-notice strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
-    .maintenance-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .maintenance-section a {
+    .maintenance-notice a {
       color: var(--clay);
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
     }
 
-    .maintenance-section a:hover {
+    .maintenance-notice a:hover {
       text-decoration: underline;
     }
 
@@ -573,6 +567,10 @@
               <blockquote class="excerpt">“Before the war, my world smelled like wildflowers and honey.”</blockquote>
               <blockquote class="excerpt">“Education became more than a goal. It became an act of hope. An act of resistance.”</blockquote>
               <p class="book-price">CA$15.00 <span data-i18n="priceNote">per copy</span></p>
+              <div class="maintenance-notice">
+                <strong data-i18n="maintenanceTitle">Payment under maintenance</strong>
+                <p style="margin:0;"><a href="mailto:bellevillejusticepeace@gmail.com" data-i18n="maintenanceEmail">Email us your order</a></p>
+              </div>
               <a class="button button-primary" href="https://square.link/u/GL1VQ7Og" data-i18n="buyOne">Pay with Square</a>
             </div>
           </article>
@@ -590,20 +588,14 @@
               <p class="book-language-note" data-i18n="bookLanguage">In English</p>
               <blockquote class="excerpt">“My hope is that when people read this book, they carry it with them—not only as a story of suffering, but as a reminder that life still reaches for light even under fire.”</blockquote>
               <p class="book-price">CA$15.00 <span data-i18n="priceNote">per copy</span></p>
+              <div class="maintenance-notice">
+                <strong data-i18n="maintenanceTitle">Payment under maintenance</strong>
+                <p style="margin:0;"><a href="mailto:bellevillejusticepeace@gmail.com" data-i18n="maintenanceEmail">Email us your order</a></p>
+              </div>
               <a class="button button-primary" href="https://square.link/u/SZH9eqgf" data-i18n="buyTwo">Pay with Square</a>
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="maintenance-section">
-      <div class="wrap">
-        <h3 data-i18n="maintenanceTitle">The payment processing is currently under maintenance.</h3>
-        <p data-i18n="maintenanceText">If you made a purchase, please email us the details:</p>
-        <p><a href="mailto:bellevillejusticepeace@gmail.com">bellevillejusticepeace@gmail.com</a></p>
-        <p data-i18n="maintenanceFields">Name of book</p>
-        <p data-i18n="maintenanceThanks">Thanks.</p>
       </div>
     </section>
 
@@ -660,10 +652,8 @@
         footnote: "All proceeds go directly to Ayham. Any setup overhead is covered by Belleville for Justice and Peace.",
         langNote: "Books available in English",
         bookLanguage: "In English",
-        maintenanceTitle: "The payment processing is currently under maintenance.",
-        maintenanceText: "If you made a purchase, please email us the details:",
-        maintenanceFields: "Name of book",
-        maintenanceThanks: "Thanks."
+        maintenanceTitle: "Payment under maintenance",
+        maintenanceEmail: "Email us your order"
       },
       fr: {
         navBooks: "Les livres",
@@ -694,10 +684,8 @@
         footnote: "Tous les profits vont directement à Ayham. Les frais de configuration sont couverts par Belleville pour la Justice et la Paix.",
         langNote: "Livres disponibles en anglais",
         bookLanguage: "En anglais",
-        maintenanceTitle: "Le traitement des paiements est actuellement en maintenance.",
-        maintenanceText: "Si vous avez effectué un achat, veuillez nous envoyer les détails par email:",
-        maintenanceFields: "Nom du livre",
-        maintenanceThanks: "Merci."
+        maintenanceTitle: "Paiement en maintenance",
+        maintenanceEmail: "Envoyez-nous votre commande"
       },
       ar: {
         navBooks: "الكتابان",
@@ -728,10 +716,8 @@
         footnote: "جميع الأرباح تذهب مباشرة إلى أيهم. أي نفقات إعداد يتحملها مركز بيلفيل من أجل العدالة والسلام.",
         langNote: "الكتب متوفرة باللغة الإنجليزية",
         bookLanguage: "باللغة الإنجليزية",
-        maintenanceTitle: "معالجة الدفع حالياً تحت الصيانة.",
-        maintenanceText: "إذا أجريت عملية شراء، يرجى إرسال التفاصيل إلينا عبر البريد الإلكتروني:",
-        maintenanceFields: "اسم الكتاب",
-        maintenanceThanks: "شكراً."
+        maintenanceTitle: "الدفع قيد الصيانة",
+        maintenanceEmail: "راسلنا بطلبك"
       }
     };
 

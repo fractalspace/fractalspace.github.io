@@ -260,31 +260,36 @@
       color: var(--muted);
     }
 
-    .maintenance-notice {
-      padding: 20px 22px;
-      margin-bottom: 32px;
-      background: #fff3cd;
-      border-left: 4px solid #ff9800;
-      border-radius: 4px;
+    .maintenance-section {
+      padding: 50px 0 60px;
+      background: var(--paper-light);
+      border-top: 1px solid rgba(47, 37, 29, 0.08);
+      border-bottom: 1px solid rgba(47, 37, 29, 0.08);
     }
 
-    .maintenance-notice strong {
-      color: #d84315;
-      font-weight: 700;
+    .maintenance-section h3 {
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+      color: var(--clay);
     }
 
-    .maintenance-notice p {
-      margin: 0 0 10px;
-      color: #333;
-      line-height: 1.6;
+    .maintenance-section p {
+      margin-bottom: 12px;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
-    .maintenance-notice p:last-child {
+    .maintenance-section p:last-child {
       margin-bottom: 0;
     }
 
-    .maintenance-notice a {
-      color: #d84315;
+    .maintenance-section a {
+      color: var(--clay);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .maintenance-section a:hover {
       text-decoration: underline;
     }
 
@@ -553,14 +558,6 @@
           <p data-i18n="sectionIntro">Read a few words from each book, then choose the story you would like to bring home.</p>
         </div>
 
-        <div class="maintenance-notice">
-          <p><strong data-i18n="maintenanceTitle">The payment processing is currently under maintenance.</strong></p>
-          <p data-i18n="maintenanceText">If you made a purchase, please email us the details:</p>
-          <p><a href="mailto:bellevillejusticepeace@gmail.com">bellevillejusticepeace@gmail.com</a></p>
-          <p data-i18n="maintenanceFields">Name of book</p>
-          <p data-i18n="maintenanceThanks">Thanks.</p>
-        </div>
-
         <div class="book-grid">
           <article class="book-card">
             <div class="book-cover">
@@ -597,6 +594,16 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="maintenance-section">
+      <div class="wrap">
+        <h3 data-i18n="maintenanceTitle">The payment processing is currently under maintenance.</h3>
+        <p data-i18n="maintenanceText">If you made a purchase, please email us the details:</p>
+        <p><a href="mailto:bellevillejusticepeace@gmail.com">bellevillejusticepeace@gmail.com</a></p>
+        <p data-i18n="maintenanceFields">Name of book</p>
+        <p data-i18n="maintenanceThanks">Thanks.</p>
       </div>
     </section>
 

@@ -260,6 +260,34 @@
       color: var(--muted);
     }
 
+    .maintenance-notice {
+      padding: 20px 22px;
+      margin-bottom: 32px;
+      background: #fff3cd;
+      border-left: 4px solid #ff9800;
+      border-radius: 4px;
+    }
+
+    .maintenance-notice strong {
+      color: #d84315;
+      font-weight: 700;
+    }
+
+    .maintenance-notice p {
+      margin: 0 0 10px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .maintenance-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .maintenance-notice a {
+      color: #d84315;
+      text-decoration: underline;
+    }
+
     .book-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -525,6 +553,14 @@
           <p data-i18n="sectionIntro">Read a few words from each book, then choose the story you would like to bring home.</p>
         </div>
 
+        <div class="maintenance-notice">
+          <p><strong data-i18n="maintenanceTitle">The payment processing is currently under maintenance.</strong></p>
+          <p data-i18n="maintenanceText">If you made a purchase, please email us the details:</p>
+          <p><a href="mailto:bellevillejusticepeace@gmail.com">bellevillejusticepeace@gmail.com</a></p>
+          <p data-i18n="maintenanceFields">Name of book</p>
+          <p data-i18n="maintenanceThanks">Thanks.</p>
+        </div>
+
         <div class="book-grid">
           <article class="book-card">
             <div class="book-cover">
@@ -616,7 +652,11 @@
         copyright: "Ayham's Books",
         footnote: "All proceeds go directly to Ayham. Any setup overhead is covered by Belleville for Justice and Peace.",
         langNote: "Books available in English",
-        bookLanguage: "In English"
+        bookLanguage: "In English",
+        maintenanceTitle: "The payment processing is currently under maintenance.",
+        maintenanceText: "If you made a purchase, please email us the details:",
+        maintenanceFields: "Name of book",
+        maintenanceThanks: "Thanks."
       },
       fr: {
         navBooks: "Les livres",
@@ -646,7 +686,11 @@
         copyright: "Les livres d'Ayham",
         footnote: "Tous les profits vont directement à Ayham. Les frais de configuration sont couverts par Belleville pour la Justice et la Paix.",
         langNote: "Livres disponibles en anglais",
-        bookLanguage: "En anglais"
+        bookLanguage: "En anglais",
+        maintenanceTitle: "Le traitement des paiements est actuellement en maintenance.",
+        maintenanceText: "Si vous avez effectué un achat, veuillez nous envoyer les détails par email:",
+        maintenanceFields: "Nom du livre",
+        maintenanceThanks: "Merci."
       },
       ar: {
         navBooks: "الكتابان",
@@ -676,7 +720,11 @@
         copyright: "كتب أيهم",
         footnote: "جميع الأرباح تذهب مباشرة إلى أيهم. أي نفقات إعداد يتحملها مركز بيلفيل من أجل العدالة والسلام.",
         langNote: "الكتب متوفرة باللغة الإنجليزية",
-        bookLanguage: "باللغة الإنجليزية"
+        bookLanguage: "باللغة الإنجليزية",
+        maintenanceTitle: "معالجة الدفع حالياً تحت الصيانة.",
+        maintenanceText: "إذا أجريت عملية شراء، يرجى إرسال التفاصيل إلينا عبر البريد الإلكتروني:",
+        maintenanceFields: "اسم الكتاب",
+        maintenanceThanks: "شكراً."
       }
     };
 
